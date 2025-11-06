@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VehicleCare — Service Book</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header class="top-header">
+    <img src="img/logo.png" class="logo" alt="VehicleCare Logo">
+    <div>
+        <h1>VehicleCare — Service Book</h1>
+        <p class="subtitle">Електронна сервісна книжка для Golf 5 та BMW X5</p>
+    </div>
+
+    <button id="themeBtn" class="theme-toggle">Dark / Light</button>
+</header>
+
+<main>
+
+    <!-- Вибір авто -->
+    <section class="vehicle-select">
+        <label>Select vehicle:</label>
+        <select id="vehicleSelector">
+            <option value="golf5">Golf 5 (2.0 TDI)</option>
+            <option value="x5">BMW X5 E53 (3.0d)</option>
+        </select>
+    </section>
+
+    <!-- Форма -->
+    <section class="form-section">
+        <div class="autocomplete-wrapper">
+            <input type="text" id="taskInput" placeholder="Enter maintenance task">
+            <div id="suggestions" class="suggestions-box"></div>
+        </div>
+
+        <input type="number" id="mileageInput" placeholder="Mileage (km)">
+        <input type="date" id="dateInput">
+        <button id="addBtn">Add Task</button>
+    </section>
+
+    <!-- Фільтр -->
+    <section class="filter-section">
+        <input type="number" id="filterMileage" placeholder="Filter by max mileage">
+        <button id="filterBtn">Apply Filter</button>
+        <button id="resetFilterBtn">Reset</button>
+        <button id="exportBtn" class="export-btn">Export JSON</button>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats-section">
+        <h2>Statistics</h2>
+        <p>Total tasks: <span id="statTotal">0</span></p>
+        <p>Golf tasks: <span id="statGolf">0</span></p>
+        <p>X5 tasks: <span id="statX5">0</span></p>
+        <p>Average mileage: <span id="statAvg">0</span> km</p>
+        <p>Last added: <span id="statLast">—</span></p>
+        <button id="clearAll" class="clear-btn">Clear All Data</button>
+    </section>
+
+    <!-- Таблиця -->
+    <section class="tasks-section">
+        <h2>Maintenance Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Vehicle</th>
+                    <th>Task</th>
+                    <th>Mileage</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="taskTable"></tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer>
+    <p class="footer-info">
+        <strong>VehicleCare — Digital Maintenance Tracker</strong><br>
+        © 2025 Ondrzhei Pishtiek. All Rights Reserved.<br>
+        Developed by Ondrzhei Pishtiek.
+    </p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
